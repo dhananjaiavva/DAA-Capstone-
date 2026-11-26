@@ -1,0 +1,222 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Length 5551 >>
+stream
+0.08 0.25 0.36 rg 0 750 612 42 re f
+BT /F1 10 Tf 1 1 1 rg 42 766 Td (COURIER PLANNING SYSTEM  |  FINAL PROJECT REPORT) Tj ET
+0.08 0.25 0.36 rg 0 0 612 34 re f
+BT /F1 9 Tf 1 1 1 rg 42 13 Td (Design and Analysis of Algorithms) Tj ET BT /F1 9 Tf 1 1 1 rg 545 13 Td (1) Tj ET
+BT /F2 22 Tf 0.060 0.290 0.450 rg 48 724.0 Td (Intelligent Courier Planning System) Tj ET
+BT /F1 6 Tf 0.130 0.190 0.250 rg 48 695.0 Td () Tj ET
+BT /F1 4 Tf 0.130 0.190 0.250 rg 48 686.3 Td () Tj ET
+BT /F2 15 Tf 0.050 0.420 0.480 rg 48 680.5 Td (Design and Analysis of Algorithms - Final Project Report) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 656.5 Td (**Project type:** Integrated Python CLI prototype) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 642.0 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 637.6 Td (**Algorithms:** Merge Sort, 0/1 Knapsack DP, Dijkstra, Nearest Neighbour TSP approximation) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 623.1 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 618.8 Td (**Runtime:** Python 3.10+ standard library) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 604.3 Td () Tj ET
+BT /F1 4 Tf 0.130 0.190 0.250 rg 48 595.9 Td () Tj ET
+BT /F2 15 Tf 0.050 0.420 0.480 rg 48 590.1 Td (Abstract) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 566.1 Td (This project models one courier vehicle leaving a depot, selecting a feasible collection of) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 551.6 Td (parcels, and visiting the selected customers before returning. It combines four algorithmic) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 537.1 Td (techniques in a single reproducible application. The packing stage exactly maximizes the total) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 522.6 Td (parcel value subject to a vehicle weight limit. The route stage computes shortest road distances) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 508.1 Td (and uses a greedy Nearest Neighbour heuristic to approximate a low-distance closed tour. The) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 493.6 Td (stages are deliberately distinct: parcel selection is not a routing constraint, and the heuristic) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 479.1 Td (route does not claim global optimality.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 464.6 Td () Tj ET
+BT /F1 4 Tf 0.130 0.190 0.250 rg 48 456.3 Td () Tj ET
+BT /F2 15 Tf 0.050 0.420 0.480 rg 48 450.5 Td (Phase 1 - Courier Problem Design and Planning \(20 marks\)) Tj ET
+BT /F2 11 Tf 0.050 0.420 0.480 rg 48 426.5 Td (Problem definition) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 410.5 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 402.2 Td (Given parcels, a vehicle capacity, a depot, and a weighted road graph, produce \(1\) a prioritized) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 387.7 Td (parcel list, \(2\) the maximum-value feasible subset for one trip, \(3\) shortest paths in the) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 373.2 Td (network, and \(4\) an approximate ordered tour through the selected customers.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 358.7 Td () Tj ET
+BT /F2 11 Tf 0.050 0.420 0.480 rg 48 350.3 Td (Data model) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 334.4 Td () Tj ET
+BT /F1 8 Tf 0.200 0.280 0.350 rg 48 326.0 Td (Entity | Fields | Meaning) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 314.4 Td () Tj ET
+BT /F1 8 Tf 0.200 0.280 0.350 rg 48 310.1 Td (Parcel | ID, destination, weight \(kg\), value, priority, deadline | A candidate delivery; weights and values are positive) Tj ET
+BT /F1 8 Tf 0.200 0.280 0.350 rg 48 298.5 Td (integers) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 286.9 Td () Tj ET
+BT /F1 8 Tf 0.200 0.280 0.350 rg 48 282.5 Td (Location | Unique string node | Depot or customer location) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 270.9 Td () Tj ET
+BT /F1 8 Tf 0.200 0.280 0.350 rg 48 266.6 Td (Road | Endpoints, distance \(km\) | Positive, undirected edge; missing edge means no direct road) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 255.0 Td () Tj ET
+BT /F1 8 Tf 0.200 0.280 0.350 rg 48 250.6 Td (Vehicle | Capacity \(kg\) | Maximum total parcel weight carried) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 239.0 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 230.7 Td (The road graph is sparse adjacency data constructed from the JSON edge list. For routing among) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 216.2 Td (stops, Dijkstra distances form a complete metric closure: an edge between any reachable pair has) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 201.7 Td (the length of its shortest road path. The reported route distance uses these shortest paths, not) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 187.2 Td (straight-line distances.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 172.7 Td () Tj ET
+BT /F2 11 Tf 0.050 0.420 0.480 rg 48 164.3 Td (Integrated design) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 148.4 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 140.0 Td (parcels.csv -> Merge Sort -> 0/1 Knapsack -> unique selected stops -> Dijkstra distances ->) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 125.5 Td (Nearest Neighbour -> closed route.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 111.0 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 102.7 Td (Priority sorting is useful for transparent dispatch order and deterministic tie-breaking. The) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 88.2 Td (knapsack objective is value maximization; priority and deadline do not force inclusion. If) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 73.7 Td (priorities must be binding, the objective or constraints would need to change. The route stage) Tj ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 9 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+endobj
+5 0 obj
+<< /Length 5985 >>
+stream
+0.08 0.25 0.36 rg 0 750 612 42 re f
+BT /F1 10 Tf 1 1 1 rg 42 766 Td (COURIER PLANNING SYSTEM  |  FINAL PROJECT REPORT) Tj ET
+0.08 0.25 0.36 rg 0 0 612 34 re f
+BT /F1 9 Tf 1 1 1 rg 42 13 Td (Design and Analysis of Algorithms) Tj ET BT /F1 9 Tf 1 1 1 rg 545 13 Td (2) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 724.0 Td (starts and ends at Depot.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 709.5 Td () Tj ET
+BT /F1 4 Tf 0.130 0.190 0.250 rg 48 701.1 Td () Tj ET
+BT /F2 15 Tf 0.050 0.420 0.480 rg 48 695.4 Td (Phase 2 - Package Prioritization and Box Filling \(20 marks\)) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 671.4 Td (Merge Sort orders by descending priority, then ascending deadline, then parcel ID. Its stable) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 656.9 Td (divide-and-conquer structure gives O\(n log n\) time and O\(n\) auxiliary memory. The final ID) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 642.4 Td (tie-break makes displayed output deterministic.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 627.9 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 619.5 Td (The 0/1 Knapsack recurrence is DP[i,c] = max\(DP[i-1,c], DP[i-1,c-w_i] + v_i\) when parcel i fits,) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 605.0 Td (otherwise DP[i,c] = DP[i-1,c]. Each parcel is either selected once or omitted. The implementation) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 590.5 Td (uses O\(nW\) time and O\(nW\) memory for n parcels and integer capacity W, then backtracks to recover) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 576.0 Td (selected parcels. This is exact for the modeled integer weights and values.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 561.5 Td () Tj ET
+BT /F1 4 Tf 0.130 0.190 0.250 rg 48 553.1 Td () Tj ET
+BT /F2 15 Tf 0.050 0.420 0.480 rg 48 547.4 Td (Phase 3 - Route Maker and Graph Processing \(20 marks\)) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 523.4 Td (Dijkstra's algorithm runs from a source location on a positive-weight graph. With an adjacency) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 508.9 Td (list and binary heap it takes O\(\(V+E\) log V\) time and O\(V+E\) space. It provides shortest road) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 494.4 Td (distances and predecessors, from which a road path can be reconstructed.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 479.9 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 471.5 Td (Nearest Neighbour repeatedly selects the closest unvisited destination under the shortest-path) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 457.0 Td (metric and finally returns to the depot. It is an approximation for the metric TSP and has O\(k^2\)) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 442.5 Td (selection work with k stops, plus repeated shortest-path calculations in this straightforward) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 428.0 Td (implementation. It does not guarantee the optimal tour. The graph is assumed connected for the) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 413.5 Td (supplied depot and sample customer set.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 399.0 Td () Tj ET
+BT /F1 4 Tf 0.130 0.190 0.250 rg 48 390.6 Td () Tj ET
+BT /F2 15 Tf 0.050 0.420 0.480 rg 48 384.8 Td (Phase 4 - System Integration and Testing \(20 marks\)) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 360.8 Td (The CLI loads CSV and JSON inputs, validates positive road lengths, runs each component, and) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 346.3 Td (prints a computed plan. Tests cover sort ordering, a known knapsack optimum, a known shortest-path) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 331.8 Td (distance, route closure, and sample data loading. Run python -m unittest discover -s tests -v from) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 317.3 Td (the project folder.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 302.8 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 294.5 Td (The sample contains 12 parcels, seven graph nodes, and a configurable 30 kg default vehicle. The) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 280.0 Td (saved trace in evidence/sample_run.txt shows the output generated from these input files. All) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 265.5 Td (displayed selections, path lengths, and totals are computed at run time.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 251.0 Td () Tj ET
+BT /F1 4 Tf 0.130 0.190 0.250 rg 48 242.6 Td () Tj ET
+BT /F2 15 Tf 0.050 0.420 0.480 rg 48 236.8 Td (Phase 5 - Performance Analysis, Results and Submission \(20 marks\)) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 212.8 Td (The benchmark uses deterministic synthetic inputs at small \(40 parcels, 12 nodes\), medium \(160,) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 198.3 Td (30\), and large \(500, 65\) scales. Each algorithm is timed using Python time.perf_counter; the) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 183.8 Td (benchmark reports one measurement per scale, so values are indicative rather than statistically) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 169.3 Td (conclusive. Knapsack capacity is fixed at 100 kg to show its dependence on both n and W. Dijkstra) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 154.8 Td (is timed for one source; route approximation uses up to 15 stops. See) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 140.3 Td (evidence/benchmark_results.csv and evidence/runtime_chart.svg.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 125.8 Td () Tj ET
+BT /F1 8 Tf 0.200 0.280 0.350 rg 48 117.5 Td (Component | Small | Medium | Large) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 105.9 Td () Tj ET
+BT /F1 8 Tf 0.200 0.280 0.350 rg 48 101.5 Td (Merge Sort | See benchmark CSV | See benchmark CSV | See benchmark CSV) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 89.9 Td () Tj ET
+BT /F1 8 Tf 0.200 0.280 0.350 rg 48 85.6 Td (Knapsack DP | See benchmark CSV | See benchmark CSV | See benchmark CSV) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 74.0 Td () Tj ET
+BT /F1 8 Tf 0.200 0.280 0.350 rg 48 69.6 Td (Dijkstra | See benchmark CSV | See benchmark CSV | See benchmark CSV) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 9 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 5202 >>
+stream
+0.08 0.25 0.36 rg 0 750 612 42 re f
+BT /F1 10 Tf 1 1 1 rg 42 766 Td (COURIER PLANNING SYSTEM  |  FINAL PROJECT REPORT) Tj ET
+0.08 0.25 0.36 rg 0 0 612 34 re f
+BT /F1 9 Tf 1 1 1 rg 42 13 Td (Design and Analysis of Algorithms) Tj ET BT /F1 9 Tf 1 1 1 rg 545 13 Td (3) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 724.0 Td () Tj ET
+BT /F1 8 Tf 0.200 0.280 0.350 rg 48 719.6 Td (Nearest Neighbour | See benchmark CSV | See benchmark CSV | See benchmark CSV) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 708.0 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 699.7 Td (Execution evidence is retained as a text trace rather than a screenshot, making it readable and) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 685.2 Td (reproducible from the included source and data. The SVG chart visualizes measured runtimes on a) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 670.7 Td (logarithmic scale so fast components remain visible beside DP.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 656.2 Td () Tj ET
+BT /F1 4 Tf 0.130 0.190 0.250 rg 48 647.8 Td () Tj ET
+BT /F2 15 Tf 0.050 0.420 0.480 rg 48 642.0 Td (Results interpretation) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 618.0 Td (Merge Sort and Dijkstra scale according to their expected asymptotic bounds. Knapsack runtime) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 603.5 Td (grows with parcel count and capacity, not just parcel count. Nearest Neighbour repeatedly invokes) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 589.0 Td (shortest-path searches and greedily chooses the next stop; practical results depend on graph) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 574.5 Td (density and number of stops. Timing is machine- and interpreter-dependent, and small durations are) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 560.0 Td (sensitive to system noise. The included benchmark is an educational comparison, not a) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 545.5 Td (statistically rigorous benchmark suite.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 531.0 Td () Tj ET
+BT /F1 4 Tf 0.130 0.190 0.250 rg 48 522.7 Td () Tj ET
+BT /F2 15 Tf 0.050 0.420 0.480 rg 48 516.9 Td (Limitations and assumptions) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 492.9 Td (1. One trip, one vehicle, one integer capacity, and positive integer parcel weights and values.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 478.4 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 474.0 Td (2. Road edges are undirected, static, and have positive distance. Traffic, time windows, service) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 459.5 Td (durations, and vehicle speed are not modeled.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 445.0 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 440.7 Td (3. Multiple parcels at one destination share a single visit. The route is calculated only after) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 426.2 Td (packing.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 411.7 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 407.3 Td (4. Knapsack maximizes value, with deterministic iteration-order tie handling; priority and) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 392.8 Td (deadline only determine display/order of candidates and do not enforce service deadlines.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 378.3 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 374.0 Td (5. Nearest Neighbour is approximate and is not guaranteed to find an optimal tour. Disconnected) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 359.5 Td (required destinations are not a supported planning case.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 345.0 Td () Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 340.6 Td (6. Benchmark samples are deterministic but each cell is measured once; no claim is made about) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 326.1 Td (universal performance.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 311.6 Td () Tj ET
+BT /F1 4 Tf 0.130 0.190 0.250 rg 48 303.3 Td () Tj ET
+BT /F2 15 Tf 0.050 0.420 0.480 rg 48 297.5 Td (Future improvements) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 273.5 Td (Add capacity in volume as well as weight; make deadline urgency part of a clearly defined) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 259.0 Td (multi-objective selection score; support multiple vehicles/trips; introduce directed roads and) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 244.5 Td (time-dependent travel costs; compare route heuristics with exact TSP on small cases; add repeated) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 230.0 Td (trials and summary statistics; and handle disconnected networks with explicit diagnostics.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 215.5 Td () Tj ET
+BT /F1 4 Tf 0.130 0.190 0.250 rg 48 207.1 Td () Tj ET
+BT /F2 15 Tf 0.050 0.420 0.480 rg 48 201.3 Td (Reproduction) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 177.3 Td (See the root README for setup and CLI commands. The project uses no third-party dependencies.) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 162.8 Td (Regenerate the plan with python src/courier.py, test with unittest discovery, and regenerate) Tj ET
+BT /F1 10 Tf 0.130 0.190 0.250 rg 48 148.3 Td (performance data with python src/courier.py --benchmark.) Tj ET
+BT /F1 3 Tf 0.130 0.190 0.250 rg 48 133.8 Td () Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 9 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+endobj
+10 0 obj
+<< /Type /Catalog /Pages 9 0 R >>
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000000160 00000 n 
+0000005763 00000 n 
+0000005899 00000 n 
+0000011936 00000 n 
+0000012072 00000 n 
+0000017326 00000 n 
+0000017462 00000 n 
+0000017531 00000 n 
+trailer
+<< /Size 11 /Root 10 0 R >>
+startxref
+17581
+%%EOF

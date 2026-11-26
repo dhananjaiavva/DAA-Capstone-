@@ -1,0 +1,9 @@
+{
+  "nodes": ["Depot", "North", "Market", "Riverside", "University", "Airport", "OldTown"],
+  "edges": [
+    ["Depot", "North", 4], ["Depot", "Market", 6], ["Depot", "OldTown", 5],
+    ["North", "Market", 3], ["North", "Riverside", 7], ["Market", "Riverside", 4],
+    ["Market", "University", 5], ["OldTown", "University", 6], ["OldTown", "Airport", 11],
+    ["Riverside", "University", 3], ["Riverside", "Airport", 10], ["University", "Airport", 6]
+  ]
+}

@@ -1,0 +1,37 @@
+COURIER PLANNING SYSTEM
+==========================
+Vehicle capacity: 30 kg
+Selected parcels: 5 / 12
+Packed weight: 30 kg | Total value: 350
+
+Priority order (Merge Sort):
+  P001 | priority 5 | deadline 2026-11-26 | 8 kg | value 90 | North
+  P010 | priority 5 | deadline 2026-11-26 | 11 kg | value 125 | University
+  P003 | priority 5 | deadline 2026-11-27 | 10 kg | value 110 | Riverside
+  P002 | priority 4 | deadline 2026-11-26 | 6 kg | value 65 | Market
+  P006 | priority 4 | deadline 2026-11-26 | 7 kg | value 80 | OldTown
+  P005 | priority 4 | deadline 2026-11-28 | 12 kg | value 130 | Airport
+  P004 | priority 3 | deadline 2026-11-27 | 5 kg | value 55 | University
+  P008 | priority 3 | deadline 2026-11-28 | 9 kg | value 105 | North
+  P011 | priority 3 | deadline 2026-11-29 | 6 kg | value 70 | Airport
+  P012 | priority 2 | deadline 2026-11-28 | 5 kg | value 60 | OldTown
+  P007 | priority 2 | deadline 2026-11-29 | 4 kg | value 48 | Market
+  P009 | priority 1 | deadline 2026-11-30 | 3 kg | value 35 | Riverside
+
+Knapsack selection:
+  P006 -> OldTown (7 kg, value 80)
+  P008 -> North (9 kg, value 105)
+  P011 -> Airport (6 kg, value 70)
+  P012 -> OldTown (5 kg, value 60)
+  P009 -> Riverside (3 kg, value 35)
+
+Delivery route (Nearest Neighbour over Dijkstra distances):
+  1. Depot
+  2. North
+  3. Riverside
+  4. Airport
+  5. OldTown
+  6. Depot
+Total road distance: 36.0 km
+
+Model: Knapsack selects parcels by value under capacity; it does not impose delivery order. The route visits the distinct destinations of selected parcels.

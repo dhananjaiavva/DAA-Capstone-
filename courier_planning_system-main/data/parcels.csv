@@ -1,0 +1,13 @@
+parcel_id,destination,weight_kg,value,priority,deadline
+P001,North,8,90,5,2026-11-26
+P002,Market,6,65,4,2026-11-26
+P003,Riverside,10,110,5,2026-11-27
+P004,University,5,55,3,2026-11-27
+P005,Airport,12,130,4,2026-11-28
+P006,OldTown,7,80,4,2026-11-26
+P007,Market,4,48,2,2026-11-29
+P008,North,9,105,3,2026-11-28
+P009,Riverside,3,35,1,2026-11-30
+P010,University,11,125,5,2026-11-26
+P011,Airport,6,70,3,2026-11-29
+P012,OldTown,5,60,2,2026-11-28
